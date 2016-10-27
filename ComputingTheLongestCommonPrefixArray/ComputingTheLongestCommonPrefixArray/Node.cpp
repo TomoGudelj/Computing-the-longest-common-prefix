@@ -31,11 +31,12 @@ void Node::BuildNode(string S, vector<char> alphabet, int begin, int end)
 {
 	this->m_nSize = S.size();
 
-	int middle = floor((begin + 1 + end + 1) / 2.f);
+	int middle = floor((begin + 1 + end + 1) / 2.f) - 1;
 
 	char shiftBy = 7;
 	char byte = 0;
 
+	int counter = 0;
 	for (auto c : S) 
 	{
 		char bit;
@@ -52,13 +53,19 @@ void Node::BuildNode(string S, vector<char> alphabet, int begin, int end)
 		byte = byte | (bit << shiftBy);
 
 		shiftBy--;
+		counter++;
 
 		if (shiftBy < 0)
 		{
 			shiftBy = 7;
+			
 			this->m_Bits.push_back(byte);
+
+			byte = 0;
+		}
+		else if (counter == S.size()) {
+			this->m_Bits.push_back(byte); //push rest of bits
 		}
 	}
-
-	this->m_Bits.push_back(byte); //stavi ono što je ostalo
+	
 }
