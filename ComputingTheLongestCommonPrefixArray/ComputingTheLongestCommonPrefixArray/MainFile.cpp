@@ -1,10 +1,14 @@
 #include <iostream>
-
+#include "Node.h"
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	cout << "hello" << endl;
+	
+
+	Node n;
+
+	n.BuildNode("arrd$rcbbraaaaaabba", {'$', 'a', 'b', 'c', 'd', 'r' }, 0, 6);
 
 	return 0;
 }
