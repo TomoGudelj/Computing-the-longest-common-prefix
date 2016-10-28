@@ -4,6 +4,7 @@ using namespace std;
 
 Node::Node()
 {
+	this->IsLeaf = false;
 }
 
 Node::~Node()
@@ -27,19 +28,39 @@ bool Node::IsInFirstHalf(vector<char> alphabet, int begin, int middle, int end, 
 	return false;
 }
 
+string Node::CalculateNewString(string S, std::vector<char> alphabet, int begin, int end)
+{
+	string NewS = "";
+
+	for (auto c : S)
+	{
+		if (IsInFirstHalf(alphabet, begin, end, end, c))
+		{
+			NewS += c;
+		}
+	}
+
+	return NewS;
+}
+
 void Node::BuildNode(string S, vector<char> alphabet, int begin, int end)
 {
+	if (begin == end)
+	{
+		return;
+	}
+
 	this->m_nSize = S.size();
 
 	int middle = floor((begin + 1 + end + 1) / 2.f) - 1;
 
 	char shiftBy = 7;
-	char byte = 0;
+	unsigned char byte = 0;
 
 	int counter = 0;
-	for (auto c : S) 
+	for (auto &c : S) 
 	{
-		char bit;
+		unsigned char bit;
 
 		if (IsInFirstHalf(alphabet, begin, middle, end, c))
 		{
