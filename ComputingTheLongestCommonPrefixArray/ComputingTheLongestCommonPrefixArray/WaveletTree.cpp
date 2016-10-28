@@ -52,6 +52,11 @@ int WaveletTree::BinaryRank(Node *node, unsigned char CharBit, int index)
 	return NewIndex;
 }
 
+int WaveletTree::CalculateRank(char c, int index)
+{
+	return Rank(this->m_pRoot, c, index, 0, m_alphabet.size() - 1);
+}
+
 int WaveletTree::Rank(Node *node, char c, int index, int begin, int end)
 {
 	int rank;

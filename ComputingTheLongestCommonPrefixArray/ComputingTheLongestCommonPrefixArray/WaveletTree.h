@@ -14,8 +14,7 @@ public:
 	~WaveletTree();
 
 	void BuildTree();
-	int Rank(Node *node, char c, int index, int begin, int end);
-	int BinaryRank(Node *node, unsigned char CharBit, int index);
+	int CalculateRank(char c, int index);
 
 private:
 	std::string m_S;
@@ -24,6 +23,8 @@ private:
 	bool AlreadyInAlphabet(char c);
 	Node *ConstructNode(std::string S, int begin, int end);
 	bool HasTheSameCahr(std::string S);
+	int Rank(Node *node, char c, int index, int begin, int end);
+	int BinaryRank(Node *node, unsigned char CharBit, int index);
 };
 
 
