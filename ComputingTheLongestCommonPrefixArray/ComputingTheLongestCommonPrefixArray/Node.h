@@ -19,6 +19,8 @@ public:
 
 	void BuildNode(std::string S, std::vector<char> alphabet, int begin, int end);
 	std::string CalculateNewString(std::string S, std::vector<char> alphabet, int begin, int end);
+	unsigned char GetRepresentingBit(char c, std::vector<char> alphabet, int begin, int end);
+
 	
 private:
 	bool IsInFirstHalf(std::vector<char> alphabet, int begin, int middle, int end, char c);

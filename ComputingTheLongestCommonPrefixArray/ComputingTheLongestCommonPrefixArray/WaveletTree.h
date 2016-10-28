@@ -8,14 +8,16 @@ class WaveletTree
 {
 public:
 	Node *m_pRoot;
+	std::vector<char> m_alphabet;
 	
 	WaveletTree(std::string S);
 	~WaveletTree();
 
 	void BuildTree();
+	int Rank(Node *node, char c, int index, int begin, int end);
+	int BinaryRank(Node *node, unsigned char CharBit, int index);
 
 private:
-	std::vector<char> m_alphabet;
 	std::string m_S;
 
 	void CalculateAlphabet();

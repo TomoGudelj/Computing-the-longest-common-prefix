@@ -43,6 +43,31 @@ string Node::CalculateNewString(string S, std::vector<char> alphabet, int begin,
 	return NewS;
 }
 
+unsigned char Node::GetRepresentingBit(char c, std::vector<char> alphabet, int begin, int end)
+{
+	int middle = floor((begin + 1 + end + 1) / 2.f) - 1;
+	unsigned char CharBit = 0;
+
+	for (int i = 0; i < alphabet.size(); i++)
+	{
+		if (alphabet[i] == c)
+		{
+			if (i <= middle)
+			{
+				CharBit = 0;
+				break;
+			}
+			else
+			{
+				CharBit = 1;
+				break;
+			}
+		}
+	}
+
+	return CharBit;
+}
+
 void Node::BuildNode(string S, vector<char> alphabet, int begin, int end)
 {
 	if (begin == end)
