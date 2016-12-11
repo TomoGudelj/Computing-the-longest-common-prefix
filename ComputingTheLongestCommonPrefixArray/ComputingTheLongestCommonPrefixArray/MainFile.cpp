@@ -1,6 +1,7 @@
 #include <iostream>
 #include "WaveletTree.h"
 #include "divsufsort.h"
+#include "BWT.h"
 
 using namespace std;
 
@@ -31,11 +32,15 @@ int main(int argc, char *argv[]) {
 		printf("$\n");
 	}
 
-	WaveletTree tree("arrd$rcbbraaaaaabba");
+	BWT bwt;
+
+	bwt.CalculateBWT(S, SA);
+
+	WaveletTree tree(bwt.BWT_string);
 
 	tree.BuildTree();
 
-	int rank = tree.CalculateRank('a', 0);
+	int rank = tree.CalculateRank('l', 4);
 
 	return 0;
 }

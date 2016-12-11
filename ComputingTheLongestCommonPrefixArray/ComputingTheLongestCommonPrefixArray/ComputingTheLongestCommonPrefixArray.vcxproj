@@ -146,12 +146,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BWT.cpp" />
     <ClCompile Include="divsufsort.cpp" />
     <ClCompile Include="MainFile.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="WaveletTree.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BWT.h" />
     <ClInclude Include="divsufsort.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="WaveletTree.h" />
