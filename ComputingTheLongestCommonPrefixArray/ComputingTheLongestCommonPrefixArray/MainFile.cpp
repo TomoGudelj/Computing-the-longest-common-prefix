@@ -13,9 +13,9 @@ int main(int argc, char *argv[]) {
 	n.BuildNode("arrd$rcbbraaaaaabba", {'$', 'a', 'b', 'c', 'd', 'r' }, 0, 5);*/
 	//string S = "arrd$rcbbraaaaaabba";
 	//cin >> S;
-
-	string S;
-	cin >> S;
+	
+	string S = "annasanannas$";
+	//cin >> S;
 	const char *str = S.c_str();
 
 	int S_length = S.size();
