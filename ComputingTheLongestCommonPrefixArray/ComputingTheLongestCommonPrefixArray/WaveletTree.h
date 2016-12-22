@@ -15,6 +15,8 @@ public:
 
 	void BuildTree();
 	int CalculateRank(char c, int index);
+	std::string getm_S();
+	
 
 private:
 	std::string m_S;

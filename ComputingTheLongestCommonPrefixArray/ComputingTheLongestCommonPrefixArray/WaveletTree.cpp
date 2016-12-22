@@ -11,6 +11,11 @@ WaveletTree::~WaveletTree()
 {
 }
 
+string WaveletTree::getm_S() 
+{
+	return m_S;
+}
+
 void WaveletTree::BuildTree() 
 {
 	CalculateAlphabet();
