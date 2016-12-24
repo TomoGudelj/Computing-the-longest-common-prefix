@@ -42,22 +42,11 @@ int main(int argc, char *argv[]) {
 
 
 	////////////////////////////// Algorithm 1 ///////////////////////////
-	Algorithm_1 alg1;
+	Algorithm_1 alg1(S_length);
+	alg1.calculateLCP(tree);
+	alg1.printLCP();
+	///////////////////////// end Algorithm 1 ///////////////////////////
 
-	vector <pair<int, int>> list;
-	pair<int, int> interval;
-	interval.first = 0; // indexes are from 0!
-	interval.second = 12;
-
-	list = alg1.getIntervals(interval, tree);
-
-	//cout << list[0].first;
-
-	///////////////////////// end algorithm_1 /////////////////////////
-
-	//tmp
-	int rank = tree.CalculateRank('s', 0);
-	cout << rank;
 	getchar();
 
 	return 0;

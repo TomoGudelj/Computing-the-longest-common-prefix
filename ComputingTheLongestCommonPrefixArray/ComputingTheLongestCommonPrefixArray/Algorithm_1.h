@@ -4,19 +4,36 @@
 #include "WaveletTree.h"
 #include<iostream>
 #include<vector>
+#include<queue>
 
+#define INVALID -2
+
+struct Interval {
+	int i, j;
+};
+
+struct QElement {
+	Interval interval;
+	int l;
+};
 
 class Algorithm_1
 {
 public:
 
-	Algorithm_1();
+	Algorithm_1(int n);
 	~Algorithm_1();
 
-	std::vector<std::pair<int, int>> getIntervals(std::pair<int, int> interval, WaveletTree &tree);
-	void getIntervals2(std::pair<int, int> interval, std::pair<int, int> main_interval, std::vector<std::pair<int, int>> & list, WaveletTree &tree);
+
+	std::vector<Interval> getIntervals(Interval interval, WaveletTree &tree);
 	int rank_sum(char &c, WaveletTree tree);
-	std::string uniqueChars(std::pair<int, int> interval, WaveletTree &tree);
+	std::string uniqueChars(Interval interval, WaveletTree &tree);
+	void printLCP();
+	void calculateLCP(WaveletTree tree);
+
+private:
+	std::vector<int> LCP;
+	std::queue<QElement> Q;
 };
 
 #endif _ALGORITHM_1_
