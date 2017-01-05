@@ -20,8 +20,8 @@ int main(int argc, char *argv[]) {
 	//string S = "arrd$rcbbraaaaaabba";
 	//cin >> S;
 	//string S = "annasanannas$";
-	string S = "GTAAGTATTTTTCAGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGCTTCTGAACTGGTTACCT$";
-	//cin >> S;
+	string S;// = "GTAAGTATTTTTCAGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGCTTCTGAACTGGTTACCT$";
+	cin >> S;
 
 	const char *str = S.c_str();
 
@@ -60,7 +60,7 @@ int main(int argc, char *argv[]) {
 	alg1.printLCP();
 	///////////////////////// end Algorithm 1 ///////////////////////////
 
-	getchar();
+	system("pause");
 	return 0;
 }
 
