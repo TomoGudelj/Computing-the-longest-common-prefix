@@ -27,10 +27,10 @@ Algorithm::~Algorithm()
 
 void Algorithm::calculateLCP(WaveletTree tree)
 {
-	
+	QElement q_el;
 	while (Q.size() > 0)
 	{
-		const QElement& q_el = Q.front();
+		q_el = Q.front();
 		Q.pop();
 		vector<Interval> list = getIntervals(q_el.interval, tree);
 		
