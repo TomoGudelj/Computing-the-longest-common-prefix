@@ -1,5 +1,5 @@
-#ifndef _ALGORITHM_1_
-#define _ALGORITHM_1_
+#ifndef _ALGORITHM_H_
+#define _ALGORITHM_H_
 
 #include "WaveletTree.h"
 #include<iostream>
@@ -17,12 +17,12 @@ struct QElement {
 	int l;
 };
 
-class Algorithm_1
+class Algorithm
 {
 public:
 
-	Algorithm_1(int n);
-	~Algorithm_1();
+	Algorithm(int n);
+	~Algorithm();
 
 
 	std::vector<Interval> getIntervals(Interval interval, WaveletTree &tree);

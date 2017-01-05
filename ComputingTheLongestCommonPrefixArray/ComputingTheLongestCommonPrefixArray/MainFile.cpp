@@ -7,7 +7,7 @@
 #include "WaveletTree.h"
 #include "divsufsort.h"
 #include "BWT.h"
-#include "Algorithm_1.h"
+#include "Algorithm.h"
 
 using namespace std;
 
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 	tree.BuildTree();
 
 	////////////////////////////// Algorithm 1 ///////////////////////////
-	Algorithm_1 alg1(S_length);
+	Algorithm alg1(S_length);
 	alg1.calculateLCP(tree);
 	chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
 
