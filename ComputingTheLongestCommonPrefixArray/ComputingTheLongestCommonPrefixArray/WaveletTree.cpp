@@ -70,9 +70,14 @@ int WaveletTree::BinaryRank(Node *node, unsigned char CharBit, int index)
 
 int WaveletTree::CalculateRank(char c, int index)
 {
+	auto it = cache.find(make_pair(c, index));
+	if (it != cache.end())
+		return it->second;
+	auto r = Rank(this->m_pRoot, c, index, 0, m_alphabet.size() - 1);
 
+	cache.insert(make_pair(make_pair(c, index), r));
 
-	return Rank(this->m_pRoot, c, index, 0, m_alphabet.size() - 1);
+	return r;
 }
 
 int WaveletTree::Rank(Node *node, char c, int index, int begin, int end)
