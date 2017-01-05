@@ -21,6 +21,7 @@ int main(int argc, char *argv[]) {
 	const char *str = S.c_str();
 
 	int S_length = S.size();
+	Algorithm alg1(S_length);
 
 	int *SA = (int *)malloc(S_length * sizeof(int));
 
@@ -49,16 +50,17 @@ int main(int argc, char *argv[]) {
 	sort(alphabet.begin(), alphabet.end());
 
 	WaveletTree tree(bwt.BWT_string, alphabet);
-	
 	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 	tree.BuildTree();
 	////////////////////////////// End Wavelet tree ///////////////////////////
 
 	////////////////////////////// Algorithm ///////////////////////////
-	Algorithm alg1(S_length);
+	
+	
+	
 	alg1.calculateLCP(tree);
-	chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
 
+	chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
 	chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
 	std::cout << "It took me " << time_span.count() << " seconds." << endl;
 
