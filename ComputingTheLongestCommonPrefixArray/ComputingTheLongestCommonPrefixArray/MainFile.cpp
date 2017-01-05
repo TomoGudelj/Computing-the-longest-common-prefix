@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
 
 	tree.BuildTree();
 
-	int rank = tree.CalculateRank('l', 4);
+	int rank = tree.CalculateRank('s', 12);
 
 	return 0;
 }
