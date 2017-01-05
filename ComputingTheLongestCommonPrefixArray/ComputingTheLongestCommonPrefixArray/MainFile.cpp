@@ -33,7 +33,6 @@ int main(int argc, char *argv[]) {
 	// create waveletTree
 	bwt.CalculateBWT(S, SA);
 
-	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 
 	fstream file;
 	string alphabet;
@@ -47,8 +46,11 @@ int main(int argc, char *argv[]) {
 	}
 
 	file >> alphabet;
+	sort(alphabet.begin(), alphabet.end());
 
-	WaveletTree tree(bwt.BWT_string);
+	WaveletTree tree(bwt.BWT_string, alphabet);
+	
+	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 	tree.BuildTree();
 	////////////////////////////// End Wavelet tree ///////////////////////////
 
