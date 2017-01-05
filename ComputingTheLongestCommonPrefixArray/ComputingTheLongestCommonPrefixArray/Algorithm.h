@@ -36,4 +36,4 @@ private:
 	std::queue<QElement> Q;
 };
 
-#endif _ALGORITHM_1_
+#endif //_ALGORITHM_1_
