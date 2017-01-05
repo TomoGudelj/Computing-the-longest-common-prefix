@@ -161,6 +161,7 @@
     <ClInclude Include="WaveletTree.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="alphabet.txt" />
     <Text Include="input.txt" />
     <Text Include="output.txt" />
   </ItemGroup>

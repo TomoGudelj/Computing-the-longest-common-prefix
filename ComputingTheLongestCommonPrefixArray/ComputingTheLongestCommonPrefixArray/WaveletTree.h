@@ -11,6 +11,7 @@ public:
 	std::vector<char> m_alphabet;
 	
 	WaveletTree(std::string S);
+	WaveletTree(std::string S, std::string alphabet);
 	~WaveletTree();
 
 	void BuildTree();

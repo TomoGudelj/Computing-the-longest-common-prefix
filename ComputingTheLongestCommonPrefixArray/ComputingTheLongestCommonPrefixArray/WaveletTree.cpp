@@ -2,9 +2,21 @@
 
 using namespace std;
 
-WaveletTree::WaveletTree(std::string S)
+WaveletTree::WaveletTree(string S, string alphabet)
 {
 	this->m_S = S;
+
+	for (auto &x : alphabet)
+	{
+		m_alphabet.push_back(x);
+	}
+}
+
+WaveletTree::WaveletTree(string S)
+{
+	this->m_S = S;
+
+	CalculateAlphabet();
 }
 
 WaveletTree::~WaveletTree()
@@ -18,8 +30,6 @@ string WaveletTree::getm_S()
 
 void WaveletTree::BuildTree() 
 {
-	CalculateAlphabet();
-
 	this->m_pRoot = ConstructNode(this->m_S, 0, this->m_alphabet.size() - 1);
 }
 

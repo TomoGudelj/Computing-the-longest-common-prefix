@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 #include <chrono>
 #include <ctime>
@@ -33,6 +34,20 @@ int main(int argc, char *argv[]) {
 	bwt.CalculateBWT(S, SA);
 
 	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+
+	fstream file;
+	string alphabet;
+
+	file.open("alphabet.txt");
+
+	if (!file.is_open())
+	{
+		cout << "Missing alphabet.txt" << endl;
+		return 1;
+	}
+
+	file >> alphabet;
+
 	WaveletTree tree(bwt.BWT_string);
 	tree.BuildTree();
 	////////////////////////////// End Wavelet tree ///////////////////////////
