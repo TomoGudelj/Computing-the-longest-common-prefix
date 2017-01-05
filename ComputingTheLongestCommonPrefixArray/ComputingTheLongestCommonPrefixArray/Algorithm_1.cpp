@@ -27,15 +27,14 @@ Algorithm_1::~Algorithm_1()
 
 void Algorithm_1::calculateLCP(WaveletTree tree)
 {
-	QElement q_el;
 	
 	while (Q.size() > 0)
 	{
-		q_el = Q.front();
+		const QElement& q_el = Q.front();
 		Q.pop();
 		vector<Interval> list = getIntervals(q_el.interval, tree);
 		
-		for (Interval cw_interval : list) {
+		for (const Interval& cw_interval : list) {
 			int index = cw_interval.j + 1; //check indexing
 			int lcp_value = LCP[index]; 
 
