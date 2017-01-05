@@ -17,12 +17,12 @@ struct QElement {
 	int l;
 };
 
-class Algorithm_1
+class Algorithm
 {
 public:
 
-	Algorithm_1(int n);
-	~Algorithm_1();
+	Algorithm(int n);
+	~Algorithm();
 
 
 	std::vector<Interval> getIntervals(Interval interval, WaveletTree &tree);

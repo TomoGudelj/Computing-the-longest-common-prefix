@@ -1,9 +1,9 @@
-#include "Algorithm_1.h"
+#include "Algorithm.h"
 
 
 using namespace std;
 
-Algorithm_1::Algorithm_1(int n)
+Algorithm::Algorithm(int n)
 {
 	// init LCP
 	LCP.push_back(-1);
@@ -20,12 +20,12 @@ Algorithm_1::Algorithm_1(int n)
 	Q.push(first_struct);
 
 }
-Algorithm_1::~Algorithm_1()
+Algorithm::~Algorithm()
 {
 
 }
 
-void Algorithm_1::calculateLCP(WaveletTree tree)
+void Algorithm::calculateLCP(WaveletTree tree)
 {
 	QElement q_el;
 	
@@ -55,7 +55,7 @@ void Algorithm_1::calculateLCP(WaveletTree tree)
 	}
 	
 }
-string Algorithm_1::uniqueChars(Interval interval, WaveletTree &tree)
+string Algorithm::uniqueChars(Interval interval, WaveletTree &tree)
 {
 	string uniqueChars;
 	int n = tree.m_alphabet.size();
@@ -69,7 +69,7 @@ string Algorithm_1::uniqueChars(Interval interval, WaveletTree &tree)
 	return uniqueChars;
 }
 
-vector<Interval> Algorithm_1::getIntervals(Interval interval, WaveletTree &tree)
+vector<Interval> Algorithm::getIntervals(Interval interval, WaveletTree &tree)
 {
 
 	vector<Interval> list;
@@ -102,7 +102,7 @@ vector<Interval> Algorithm_1::getIntervals(Interval interval, WaveletTree &tree)
 }
 
 
-int Algorithm_1::rank_sum(char &c, WaveletTree tree) {
+int Algorithm::rank_sum(char &c, WaveletTree tree) {
 	int sum = 0;
 	string str = tree.getm_S();
 
@@ -118,7 +118,7 @@ int Algorithm_1::rank_sum(char &c, WaveletTree tree) {
 	return sum;
 }
 
-void Algorithm_1::printLCP() {
+void Algorithm::printLCP() {
 	cout << "LCP:" << endl;
 	for (int &el : LCP)
 		cout << el << " ";
