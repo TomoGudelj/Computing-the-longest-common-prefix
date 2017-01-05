@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="Algorithm.cpp" />
     <ClCompile Include="BWT.cpp" />
+    <ClCompile Include="CPPAppendix.cpp" />
     <ClCompile Include="divsufsort.cpp" />
     <ClCompile Include="MainFile.cpp" />
     <ClCompile Include="Node.cpp" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="Algorithm.h" />
     <ClInclude Include="BWT.h" />
+    <ClInclude Include="CPPAppendix.h" />
     <ClInclude Include="divsufsort.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="WaveletTree.h" />

@@ -83,8 +83,11 @@ vector<Interval> Algorithm::getIntervals(Interval interval, WaveletTree &tree)
 		char c = unique[i];
 		int a = tree.CalculateRank(c, interval.i - 1);
 		int b = tree.CalculateRank(c, interval.j );
-		int C = rank_sum(c, tree);
+		int C = tree.m_C[IndexOf(tree.m_alphabet, c)];//popravljeno
 		Interval new_interval;
+
+		//cout << c << " " << interval.i - 1 << endl;
+		//cout << c << " " << interval.j << endl;
 
 		new_interval.i = a + C + 1;
 		new_interval.j = C + b;
@@ -98,23 +101,6 @@ vector<Interval> Algorithm::getIntervals(Interval interval, WaveletTree &tree)
 
 	return list;
 	
-}
-
-
-int Algorithm::rank_sum(char &c, WaveletTree tree) {
-	int sum = 0;
-	string str = tree.getm_S();
-
-	vector<char>::iterator it;
-	it = find(tree.m_alphabet.begin(), tree.m_alphabet.end(), c);
-	int pos = distance(tree.m_alphabet.begin(), it);
-
-	for (int i = 0; i < pos; i++) {		
-		size_t n = count(str.begin(), str.end(),tree.m_alphabet[i]);//private to public!
-		sum += n;
-	}
-
-	return sum;
 }
 
 void Algorithm::printLCP() {

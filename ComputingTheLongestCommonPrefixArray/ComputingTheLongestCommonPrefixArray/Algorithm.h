@@ -2,6 +2,7 @@
 #define _ALGORITHM_H_
 
 #include "WaveletTree.h"
+#include "CPPAppendix.h"
 #include<iostream>
 #include<vector>
 #include<queue>
@@ -26,7 +27,6 @@ public:
 
 
 	std::vector<Interval> getIntervals(Interval interval, WaveletTree &tree);
-	int rank_sum(char &c, WaveletTree tree);
 	std::string uniqueChars(Interval interval, WaveletTree &tree);
 	void printLCP();
 	void calculateLCP(WaveletTree tree);

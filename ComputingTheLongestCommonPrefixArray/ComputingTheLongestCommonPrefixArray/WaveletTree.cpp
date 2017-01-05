@@ -31,6 +31,7 @@ string WaveletTree::getm_S()
 void WaveletTree::BuildTree() 
 {
 	this->m_pRoot = ConstructNode(this->m_S, 0, this->m_alphabet.size() - 1);
+	SumCharacterRanks();
 }
 
 int WaveletTree::BinaryRank(Node *node, unsigned char CharBit, int index) 
@@ -170,4 +171,39 @@ bool WaveletTree::AlreadyInAlphabet(char c)
 	}
 
 	return false;
+}
+
+//int WaveletTree::rank_sum(char &c) {
+//	int sum = 0;
+//
+//	vector<char>::iterator it;
+//	it = find(m_alphabet.begin(), m_alphabet.end(), c);
+//	int pos = distance(m_alphabet.begin(), it);
+//
+//	for (int i = 0; i < pos; i++) {
+//		//size_t n = count(m_S.begin(), m_S.end(), m_alphabet[i]);//private to public!
+//		size_t n = CalculateRank(m_alphabet[i], m_S.size() - 1);
+//		sum += n;
+//	}
+//
+//	return sum;
+//}
+
+int WaveletTree::rank_sum(char &c) 
+{
+	int pos = IndexOf(m_alphabet, c);
+
+	if (pos - 1 < 0)
+	{
+		return 0;
+	}
+	return m_C[pos - 1] + CalculateRank(m_alphabet[pos - 1], m_S.size() - 1);
+}
+
+void WaveletTree::SumCharacterRanks()
+{
+	for (auto &c : m_alphabet)
+	{
+		m_C.push_back(rank_sum(c));
+	}
 }
