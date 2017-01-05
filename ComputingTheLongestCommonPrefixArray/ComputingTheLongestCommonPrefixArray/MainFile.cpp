@@ -49,7 +49,6 @@ int main(int argc, char *argv[]) {
 	WaveletTree tree(bwt.BWT_string);
 	tree.BuildTree();
 
-	
 	////////////////////////////// Algorithm 1 ///////////////////////////
 	Algorithm_1 alg1(S_length);
 	alg1.calculateLCP(tree);
@@ -62,7 +61,6 @@ int main(int argc, char *argv[]) {
 	///////////////////////// end Algorithm 1 ///////////////////////////
 
 	getchar();
-
 	return 0;
 }
 
