@@ -12,15 +12,9 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	
 
-	/*Node n;
-	
-	n.BuildNode("arrd$rcbbraaaaaabba", {'$', 'a', 'b', 'c', 'd', 'r' }, 0, 5);*/
-	//string S = "arrd$rcbbraaaaaabba";
-	//cin >> S;
-	//string S = "annasanannas$";
-	string S;// = "GTAAGTATTTTTCAGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGCTTCTGAACTGGTTACCT$";
+	////////////////////////////// Suffix array ///////////////////////////
+	string S;
 	cin >> S;
 
 	const char *str = S.c_str();
@@ -30,26 +24,20 @@ int main(int argc, char *argv[]) {
 	int *SA = (int *)malloc(S_length * sizeof(int));
 
 	divsufsort((unsigned char *)str, SA, S_length, 1);
+	////////////////////////////// End Suffix array ///////////////////////////
 
-	/*
-	for (int i = 0; i < S_length; ++i) {
-		printf("SA[%2d] = %2d: ", i, SA[i]);
-		for (int j = SA[i]; j < S_length; ++j) {
-			printf("%c", str[j]);
-		}
-		printf("$\n");
-	}
-	*/
-
+	////////////////////////////// Wavelet tree ///////////////////////////
 	BWT bwt;
+
 	// create waveletTree
 	bwt.CalculateBWT(S, SA);
 
 	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 	WaveletTree tree(bwt.BWT_string);
 	tree.BuildTree();
+	////////////////////////////// End Wavelet tree ///////////////////////////
 
-	////////////////////////////// Algorithm 1 ///////////////////////////
+	////////////////////////////// Algorithm ///////////////////////////
 	Algorithm alg1(S_length);
 	alg1.calculateLCP(tree);
 	chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
@@ -58,9 +46,8 @@ int main(int argc, char *argv[]) {
 	std::cout << "It took me " << time_span.count() << " seconds." << endl;
 
 	alg1.printLCP();
-	///////////////////////// end Algorithm 1 ///////////////////////////
+	///////////////////////// end Algorithm ///////////////////////////
 
-	system("pause");
 	return 0;
 }
 
