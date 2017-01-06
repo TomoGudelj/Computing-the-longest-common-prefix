@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Inputs">
+      <UniqueIdentifier>{203b8fd5-43be-4adc-a0ed-e2227ba6df2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainFile.cpp">
@@ -61,5 +64,20 @@
     <Text Include="input.txt" />
     <Text Include="output.txt" />
     <Text Include="alphabet.txt" />
+    <Text Include="Inputs\input100.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\input1000.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\input10000.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\input100000.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="Inputs\input1000000.txt">
+      <Filter>Inputs</Filter>
+    </Text>
   </ItemGroup>
 </Project>

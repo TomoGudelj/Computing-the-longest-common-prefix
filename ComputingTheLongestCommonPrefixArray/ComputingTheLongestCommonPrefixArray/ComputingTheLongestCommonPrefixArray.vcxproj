@@ -165,6 +165,11 @@
   <ItemGroup>
     <Text Include="alphabet.txt" />
     <Text Include="input.txt" />
+    <Text Include="Inputs\input100.txt" />
+    <Text Include="Inputs\input1000.txt" />
+    <Text Include="Inputs\input10000.txt" />
+    <Text Include="Inputs\input100000.txt" />
+    <Text Include="Inputs\input1000000.txt" />
     <Text Include="output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
