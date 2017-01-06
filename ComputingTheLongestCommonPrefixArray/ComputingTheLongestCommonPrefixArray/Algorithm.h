@@ -6,6 +6,7 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<fstream>
 
 #define INVALID -2
 
@@ -30,6 +31,7 @@ public:
 	std::string uniqueChars(Interval interval, WaveletTree &tree);
 	void printLCP();
 	void calculateLCP(WaveletTree tree);
+	void writeLCP(const std::string &filename);
 
 private:
 	std::vector<int> LCP;

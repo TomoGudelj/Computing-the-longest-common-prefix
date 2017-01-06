@@ -68,6 +68,9 @@ int main(int argc, char *argv[]) {
 	chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
 	std::cout << "It took me " << time_span.count() << " seconds." << endl;
 
+	///////////////////////// end Algorithm ///////////////////////////
+
+
  /*
      *  Measure memory usage of current process...
      *  Measuring RSS... Resident Set Size
@@ -83,7 +86,9 @@ int main(int argc, char *argv[]) {
     }
 
 //	alg1.printLCP();
-	///////////////////////// end Algorithm ///////////////////////////
+
+	cout << "LCP array is in output.txt"<<endl;	
+	alg1.writeLCP("output.txt");
 
 	return 0;
 }
