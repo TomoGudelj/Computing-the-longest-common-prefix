@@ -1,4 +1,6 @@
 \documentclass[times, utf8, seminar, numeric]{fer}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \usepackage{booktabs}
  \usepackage{url}
 
@@ -34,6 +36,31 @@ Uvod.
 \chapter{Algoritam 1}
 
 \chapter{Algoritam 2}
+
+\chapter{Eksperimenti i rezultati}
+
+	  \begin{table}[h]
+	  	
+	  	\centering
+	  	\begin{tabular}{|P{2cm}|P{3cm}|P{2.5cm}|} 
+		 \hline
+		  Broj znakova & Implementacija Simona Goga [s] & Binarno stablo valića [s] \\
+	  		 \hline
+	  		100 & 0.037231 & x \\
+	  		1,000 & 0.030089 & x \\
+	  		10,000 & 0.022991  & x \\ 
+	  		100,000 &  0.03929 & x \\
+	  		1,000,000 & 0.223351 & x \\	
+	  		
+	  		\hline  		
+	  	\end{tabular}
+	  	\caption{Brzine izvođenja}
+	  	\label{tbl:std_dev}
+	  	
+	  \end{table}
+
+
+
 
 \chapter{Zaključak}
 Zaključak.
