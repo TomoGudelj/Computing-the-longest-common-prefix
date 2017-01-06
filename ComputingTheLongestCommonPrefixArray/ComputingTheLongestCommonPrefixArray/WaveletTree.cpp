@@ -36,7 +36,7 @@ void WaveletTree::BuildTree()
 
 int WaveletTree::BinaryRank(Node *node, unsigned char CharBit, int index) 
 {
-	int NewIndex = 0;
+	int NewIndex = -1;
 	int ArrayIndex = 0;
 	vector<unsigned char> Bits;
 	Bits.resize(node->m_Bits.size());
@@ -64,7 +64,7 @@ int WaveletTree::BinaryRank(Node *node, unsigned char CharBit, int index)
 	}
 
 
-	NewIndex--; //uzimamo index a ne broj elemenata
+	//NewIndex--; //uzimamo index a ne broj elemenata
 	return NewIndex;
 }
 
