@@ -12,7 +12,8 @@ public:
 	IWaveletTree(std::string S);
 	IWaveletTree(std::string S, std::string alphabet);
 	~IWaveletTree();
-
+	
+	virtual void BuildTree() = 0;
 	virtual int CalculateRank(char c, int index) = 0;
 	int rank_sum(char &c);
 	void SumCharacterRanks();

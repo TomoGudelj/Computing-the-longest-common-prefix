@@ -18,6 +18,12 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 
+        if(argc != 3)
+        {
+                cout << "Missing parameters (expected 2)" << endl;
+                return 1;
+        }
+
 	////////////////////////////// Suffix array ///////////////////////////
 	string S;
 	cin >> S;
@@ -53,11 +59,19 @@ int main(int argc, char *argv[]) {
 	file >> alphabet;
 	sort(alphabet.begin(), alphabet.end());
 
-	WaveletTree tree(bwt.BWT_string, alphabet);
+        IWaveletTree *tree;//(bwt.BWT_string, alphabet);
+        if(string("studentWT") == argv[2]) //student implementation
+        {
+            tree = new WaveletTree(bwt.BWT_string, alphabet);
+        }
+        else //SDSL alhorithm
+        {
+
+        }
 
 	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 
-	tree.BuildTree();
+        tree.BuildTree();
 
 	////////////////////////////// End Wavelet tree ///////////////////////////
 
