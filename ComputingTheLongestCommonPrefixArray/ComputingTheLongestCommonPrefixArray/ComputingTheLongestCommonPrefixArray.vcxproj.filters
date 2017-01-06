@@ -61,7 +61,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt" />
     <Text Include="output.txt" />
     <Text Include="alphabet.txt" />
     <Text Include="Inputs\input100.txt">
@@ -77,6 +76,9 @@
       <Filter>Inputs</Filter>
     </Text>
     <Text Include="Inputs\input1000000.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="input.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>

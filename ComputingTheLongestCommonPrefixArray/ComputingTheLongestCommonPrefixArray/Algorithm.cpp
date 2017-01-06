@@ -103,6 +103,25 @@ vector<Interval> Algorithm::getIntervals(Interval interval, WaveletTree &tree)
 	
 }
 
+void Algorithm:: writeLCP(const string &filename){
+
+		fstream file;
+		file.open(filename,ios::out);
+		if (file.is_open() ){
+
+			for (const int &el: LCP){
+				file << el << " ";		
+			}
+			//file << endl;
+			file.close();		
+		}
+
+		
+		
+}
+	
+
+
 void Algorithm::printLCP() {
 	cout << "LCP:" << endl;
 	for (int &el : LCP)

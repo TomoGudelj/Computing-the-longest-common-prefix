@@ -6,6 +6,7 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<fstream>
 
 #define INVALID -2
 
@@ -27,6 +28,7 @@ public:
 
 	void printLCP();
 	void calculateLCP(WaveletTree tree);
+	void writeLCP(const std::string &filename);
 
 private:
 	std::vector<int> LCP;
