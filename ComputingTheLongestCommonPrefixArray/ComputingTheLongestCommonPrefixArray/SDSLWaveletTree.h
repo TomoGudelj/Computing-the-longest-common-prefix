@@ -1,10 +1,12 @@
 #ifndef _SDSLWAVELETTREE_H_
 #define _SDSLWAVELETTREE_H_
+#include"IWaveletTree.h"
 
-class SDSLWaveletTree
+class SDSLWaveletTree : public IWaveletTree
 {
 public:
-	SDSLWaveletTree();
+	SDSLWaveletTree(std::string S);
+	SDSLWaveletTree(std::string S, std::string alphabet);
 	~SDSLWaveletTree();
 
 	void BuildTree();
