@@ -2,21 +2,15 @@
 
 using namespace std;
 
-WaveletTree::WaveletTree(string S, string alphabet)
-{
-	this->m_S = S;
 
-	for (auto &x : alphabet)
-	{
-		m_alphabet.push_back(x);
-	}
+WaveletTree::WaveletTree(string S) : IWaveletTree(S)
+{
+
 }
 
-WaveletTree::WaveletTree(string S)
+WaveletTree::WaveletTree(string S, string alphabet) : IWaveletTree(S, alphabet)
 {
-	this->m_S = S;
-
-	CalculateAlphabet();
+	
 }
 
 WaveletTree::~WaveletTree()
@@ -149,31 +143,7 @@ bool WaveletTree::HasTheSameCahr(string S)
 	return true;
 }
 
-void WaveletTree::CalculateAlphabet() 
-{
-	for (auto &c : m_S)
-	{
-		if (!AlreadyInAlphabet(c))
-		{
-			m_alphabet.push_back(c);
-		}
-	}
 
-	sort(m_alphabet.begin(), m_alphabet.end());
-}
-
-bool WaveletTree::AlreadyInAlphabet(char c)
-{
-	for (auto &x : m_alphabet)
-	{
-		if (x == c)
-		{
-			return true;
-		}
-	}
-
-	return false;
-}
 
 //int WaveletTree::rank_sum(char &c) {
 //	int sum = 0;
