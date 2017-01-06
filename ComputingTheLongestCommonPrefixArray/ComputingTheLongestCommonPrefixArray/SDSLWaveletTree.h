@@ -2,6 +2,10 @@
 #define _SDSLWAVELETTREE_H_
 #include"IWaveletTree.h"
 
+#include <sdsl/wavelet_trees.hpp>
+
+
+
 class SDSLWaveletTree : public IWaveletTree
 {
 public:
@@ -12,6 +16,7 @@ public:
 	void BuildTree();
 	int CalculateRank(char c, int index);
 private:
+        sdsl::wt_huff<> m_wt;
 
 };
 
