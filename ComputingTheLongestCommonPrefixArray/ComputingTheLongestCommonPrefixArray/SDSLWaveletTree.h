@@ -2,6 +2,12 @@
 #define _SDSLWAVELETTREE_H_
 #include"IWaveletTree.h"
 
+#include <algorithm>
+#include "CPPAppendix.h"
+#include<unordered_map>
+#include<utility>
+#include <functional>
+
 #include <sdsl/wavelet_trees.hpp>
 
 
@@ -17,6 +23,7 @@ public:
 	int CalculateRank(char c, int index);
 private:
         sdsl::wt_huff<> m_wt;
+        std::unordered_map<std::pair<char, int>, int, pair_hash> cache;
 
 };
 
