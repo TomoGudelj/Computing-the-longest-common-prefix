@@ -5,7 +5,10 @@
 #include <ctime>
 #include <ratio>
 
+//#define USE_MEMORY_METER
+#ifdef USE_MEMORY_ANALYZER
 #include <sys/resource.h>
+#endif
 #include "WaveletTree.h"
 #include "divsufsort.h"
 #include "BWT.h"
@@ -79,12 +82,14 @@ int main(int argc, char *argv[]) {
      *
      *  @param usage    Structure that is holding data of the memory usage
      */
+
+#ifdef USE_MEMORY_ANALYZER
     {
         struct rusage usage;
         getrusage(RUSAGE_SELF, &usage);
         cout << "Memory usage: "<< usage.ru_maxrss/((float)1024) << " MB of RAM" << endl;
     }
-
+#endif
 //	alg1.printLCP();
 
 	cout << "LCP array is in output.txt"<<endl;	
