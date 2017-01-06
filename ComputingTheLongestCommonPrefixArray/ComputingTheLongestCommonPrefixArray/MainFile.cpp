@@ -50,8 +50,11 @@ int main(int argc, char *argv[]) {
 	sort(alphabet.begin(), alphabet.end());
 
 	WaveletTree tree(bwt.BWT_string, alphabet);
+	
 	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+
 	tree.BuildTree();
+
 	////////////////////////////// End Wavelet tree ///////////////////////////
 
 	////////////////////////////// Algorithm ///////////////////////////
