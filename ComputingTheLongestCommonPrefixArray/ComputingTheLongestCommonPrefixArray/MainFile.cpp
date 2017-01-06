@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 	sort(alphabet.begin(), alphabet.end());
 
 	WaveletTree tree(bwt.BWT_string, alphabet);
-	
+
 	chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 
 	tree.BuildTree();
@@ -62,9 +62,9 @@ int main(int argc, char *argv[]) {
 	////////////////////////////// End Wavelet tree ///////////////////////////
 
 	////////////////////////////// Algorithm ///////////////////////////
-	
-	
-	
+
+
+
 	alg1.calculateLCP(tree);
 
 	chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
@@ -75,24 +75,24 @@ int main(int argc, char *argv[]) {
 
 
  /*
-     *  Measure memory usage of current process...
-     *  Measuring RSS... Resident Set Size
-     *  the portion of memory occupied by a process 
-     *  that is held in main memory (RAM)
-     *
-     *  @param usage    Structure that is holding data of the memory usage
-     */
+	 *  Measure memory usage of current process...
+	 *  Measuring RSS... Resident Set Size
+	 *  the portion of memory occupied by a process
+	 *  that is held in main memory (RAM)
+	 *
+	 *  @param usage    Structure that is holding data of the memory usage
+	 */
 
 #ifdef USE_MEMORY_ANALYZER
-    {
-        struct rusage usage;
-        getrusage(RUSAGE_SELF, &usage);
-        cout << "Memory usage: "<< usage.ru_maxrss/((float)1024) << " MB of RAM" << endl;
-    }
-#endif
-//	alg1.printLCP();
 
-	cout << "LCP array is in output.txt"<<endl;	
+	struct rusage usage;
+	getrusage(RUSAGE_SELF, &usage);
+	cout << "Memory usage: " << usage.ru_maxrss / ((float)1024) << " MB of RAM" << endl;
+
+#endif
+	//	alg1.printLCP();
+
+	cout << "LCP array is in output.txt" << endl;
 	alg1.writeLCP("output.txt");
 
 	return 0;

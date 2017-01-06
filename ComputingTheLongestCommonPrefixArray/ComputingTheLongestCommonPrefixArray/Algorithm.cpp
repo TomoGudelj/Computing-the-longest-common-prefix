@@ -25,7 +25,7 @@ Algorithm::~Algorithm()
 
 }
 
-void Algorithm::calculateLCP(WaveletTree tree)
+void Algorithm::calculateLCP(IWaveletTree &tree)
 {
 	QElement q_el;
 	while (Q.size() > 0)
@@ -54,7 +54,7 @@ void Algorithm::calculateLCP(WaveletTree tree)
 	}
 	
 }
-string Algorithm::uniqueChars(Interval interval, WaveletTree &tree)
+string Algorithm::uniqueChars(Interval interval, IWaveletTree &tree)
 {
 	string uniqueChars;
 	int n = tree.m_alphabet.size();
@@ -68,7 +68,7 @@ string Algorithm::uniqueChars(Interval interval, WaveletTree &tree)
 	return uniqueChars;
 }
 
-vector<Interval> Algorithm::getIntervals(Interval interval, WaveletTree &tree)
+vector<Interval> Algorithm::getIntervals(Interval interval, IWaveletTree &tree)
 {
 
 	vector<Interval> list;
@@ -78,11 +78,11 @@ vector<Interval> Algorithm::getIntervals(Interval interval, WaveletTree &tree)
 	unique = uniqueChars(interval, tree);
 	int n = unique.size();
 
-	for (int i = 0; i < n; i++) 
+	for (int i = 0; i < n; i++)
 	{
 		char c = unique[i];
 		int a = tree.CalculateRank(c, interval.i - 1);
-		int b = tree.CalculateRank(c, interval.j );
+		int b = tree.CalculateRank(c, interval.j);
 		int C = tree.m_C[IndexOf(tree.m_alphabet, c)];//popravljeno
 		Interval new_interval;
 

@@ -27,15 +27,15 @@ public:
 	~Algorithm();
 
 	void printLCP();
-	void calculateLCP(WaveletTree tree);
+	void calculateLCP(IWaveletTree &tree);
 	void writeLCP(const std::string &filename);
 
 private:
 	std::vector<int> LCP;
 	std::queue<QElement> Q;
 
-	std::vector<Interval> getIntervals(Interval interval, WaveletTree &tree);
-	std::string uniqueChars(Interval interval, WaveletTree &tree);
+	std::vector<Interval> getIntervals(Interval interval, IWaveletTree &tree);
+	std::string uniqueChars(Interval interval, IWaveletTree &tree);
 };
 
 #endif //_ALGORITHM_1_

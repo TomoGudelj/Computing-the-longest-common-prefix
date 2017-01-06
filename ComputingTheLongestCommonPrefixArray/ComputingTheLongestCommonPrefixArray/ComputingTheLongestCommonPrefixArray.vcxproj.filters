@@ -39,6 +39,9 @@
     <ClCompile Include="CPPAppendix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="IWaveletTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WaveletTree.h">
@@ -57,6 +60,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CPPAppendix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IWaveletTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -78,7 +84,7 @@
     <Text Include="Inputs\input1000000.txt">
       <Filter>Inputs</Filter>
     </Text>
-    <Text Include="input.txt">
+    <Text Include="Inputs\input.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>

@@ -150,6 +150,7 @@
     <ClCompile Include="BWT.cpp" />
     <ClCompile Include="CPPAppendix.cpp" />
     <ClCompile Include="divsufsort.cpp" />
+    <ClCompile Include="IWaveletTree.cpp" />
     <ClCompile Include="MainFile.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="WaveletTree.cpp" />
@@ -159,12 +160,13 @@
     <ClInclude Include="BWT.h" />
     <ClInclude Include="CPPAppendix.h" />
     <ClInclude Include="divsufsort.h" />
+    <ClInclude Include="IWaveletTree.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="WaveletTree.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="alphabet.txt" />
-    <Text Include="input.txt" />
+    <Text Include="Inputs\input.txt" />
     <Text Include="Inputs\input100.txt" />
     <Text Include="Inputs\input1000.txt" />
     <Text Include="Inputs\input10000.txt" />
