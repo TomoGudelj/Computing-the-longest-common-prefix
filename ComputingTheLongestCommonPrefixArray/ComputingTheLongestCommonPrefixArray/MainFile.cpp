@@ -5,6 +5,7 @@
 #include <ctime>
 #include <ratio>
 
+#include <sys/resource.h>
 #include "WaveletTree.h"
 #include "divsufsort.h"
 #include "BWT.h"
@@ -67,7 +68,21 @@ int main(int argc, char *argv[]) {
 	chrono::duration<double> time_span = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
 	std::cout << "It took me " << time_span.count() << " seconds." << endl;
 
-	alg1.printLCP();
+ /*
+     *  Measure memory usage of current process...
+     *  Measuring RSS... Resident Set Size
+     *  the portion of memory occupied by a process 
+     *  that is held in main memory (RAM)
+     *
+     *  @param usage    Structure that is holding data of the memory usage
+     */
+    {
+        struct rusage usage;
+        getrusage(RUSAGE_SELF, &usage);
+        cout << "Memory usage: "<< usage.ru_maxrss/((float)1024) << " MB of RAM" << endl;
+    }
+
+//	alg1.printLCP();
 	///////////////////////// end Algorithm ///////////////////////////
 
 	return 0;
