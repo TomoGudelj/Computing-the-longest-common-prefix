@@ -1,7 +1,66 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: Seminar[godina]Prezime_Ime.aux
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Seminar[godina]Prezime_Ime.aux
 The style file: fer.bst
 Database file #1: literatura.bib
-Warning--can't use both author and editor fields in Beller2011
-Warning--empty publisher in domazet_sikic_skripta
+Name 1 in "Ferragina, P., Manzini, G.," has a comma at the end for entry feragina
+while executing---line 2649 of file fer.bst
+Too many commas in name 1 of "Ferragina, P., Manzini, G.," for entry feragina
+while executing---line 2649 of file fer.bst
+Name 1 in "Ferragina, P., Manzini, G.," has a comma at the end for entry feragina
+while executing---line 2649 of file fer.bst
+Too many commas in name 1 of "Ferragina, P., Manzini, G.," for entry feragina
+while executing---line 2649 of file fer.bst
+Warning--empty publisher in Beller2011
+Name 1 in "Ferragina, P., Manzini, G.," has a comma at the end for entry feragina
+while executing---line 2813 of file fer.bst
+Too many commas in name 1 of "Ferragina, P., Manzini, G.," for entry feragina
+while executing---line 2813 of file fer.bst
+Name 1 in "Ferragina, P., Manzini, G.," has a comma at the end for entry feragina
+while executing---line 2813 of file fer.bst
+Too many commas in name 1 of "Ferragina, P., Manzini, G.," for entry feragina
+while executing---line 2813 of file fer.bst
 Warning--empty publisher in wt_book
-(There were 3 warnings)
+Warning--empty publisher in domazet_sikic_skripta
+You've used 4 entries,
+            2773 wiz_defined-function locations,
+            620 strings with 5685 characters,
+and the built_in function-call counts, 1951 in all, are:
+= -- 170
+> -- 91
+< -- 6
++ -- 31
+- -- 27
+* -- 140
+:= -- 289
+add.period$ -- 15
+call.type$ -- 4
+change.case$ -- 19
+chr.to.int$ -- 4
+cite$ -- 11
+duplicate$ -- 102
+empty$ -- 162
+format.name$ -- 35
+if$ -- 423
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 7
+newline$ -- 31
+num.names$ -- 16
+pop$ -- 53
+preamble$ -- 1
+purify$ -- 17
+quote$ -- 0
+skip$ -- 85
+stack$ -- 0
+substring$ -- 72
+swap$ -- 25
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 29
+warning$ -- 3
+while$ -- 16
+width$ -- 0
+write$ -- 62
+(There were 8 error messages)

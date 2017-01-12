@@ -39,7 +39,7 @@ Računanje najduljeg zajedničkog prefiksa izračunatih sufiksa ulaznog niza - $
 		\item {određivanjem \textbf{sufiksnog polja} $SA$ ulaznog niza $S$}
 		\item {računanjem \textbf{Burrows-Wheelerove transformacije - BWT} koristeći $SA$}
 		\item {izgradnjom \textbf{binarnog stabla valića} nad novim nizom $S'= BWT(S)$}
-		\item {implementacijom funkcije \textbf{rang} nad binarnim stablom valića koja se koristi u algoritmu 1}
+		\item {implementacijom funkcije \textbf{rang} nad binarnim stablom valića koja se koristi u \textbf{algoritmu 1}}
 		\item {konstrukcijom \textbf{LCP polja} \textbf{algoritmom 2} koji poziva metodu $getIntervals$ \textbf{algoritma 1}}
 	\end{enumerate} 
 \end{center}
@@ -134,9 +134,26 @@ Za konstrukciju čvorova stabla korišten je pseudokod na slici 2.2.
 \end{center}
 
 Na primjer \textit{rank$_9$('n')}. Prvi ulazak rezultira novim indeksom 6 i prelazimo u desno dijete (jer 'n' pripada skupini 1 u prvoj podabecedi). Drugi ulazak rezultira novim indeksom 5 te prelazimo u lijevo dijete. Kod trećeg ulaska novi indeks je 2, prelazimo u desno dijete. Desno dijete je jednoznačno i zadovoljen je uvjet 4. te dobivamo rezultat: $index + 1 = 2 + 1 = 3$.
-\section{Algoritam 1}
 
-\section{Algoritam 2}
+\section{Algoritmi}
+
+Neke analize nizova zahtijevaju polje najdužih zajedničkih prefiksa (\textit{engl. longest common prefix array - $LCP$}). Polje sadržava duljine najdužih zajedničkih prefiksa između svih parova koji su uzastopno poredani u sufiksnom polju. Primjer izračunatog LCP polja prikazan je na slici \ref{lcp_table}.
+
+
+
+\begin{center}
+	\includegraphics[scale=0.5]{slike/lcp_table.png}
+	\captionof{figure}{ Sufiksno polje ($SA$), $BWT$ niz i $LCP$ polje. Slika preuzeta iz \cite{Beller2011}. }
+	\label{lcp_table}
+\end{center}
+
+
+U ovom radu obrađuje se implementacija LCP polja temeljena na BWT transformaciji. Prema radu\cite{Beller2011} najlošije vrijeme izvođenja algoritma je $ O(n\hspace{0.5mm} log \hspace{0.5mm} \sigma) $. Algoritmi 1 i 2 za  izračunavanje LCP polja objašnjeni su u nastavku.
+
+\subsection{Algoritam 1}
+Feragina  i Manzini u članku\cite{feragina} pokazuju kako je moguće pretraživati uzorke u sufiksnom polju unazad znak po znak bez spremanja sufiksnog polja u memoriju. Neka je $\omega\hspace{0.5mm} \epsilon\hspace{0.5mm} \Sigma $ i $ \omega$ podniz od S. Za $\omega$-interval $[i..j]$ u sufiksnom polju SA niza S ($\omega$ je prefiks svih sufiksa u sufiksnom polju $S_{SA[k]}$ za sve $ i \leq k \leq j $), funkcija \textit{backwardSearch(c, [i..j])} vraća $ c\omega$-interval $[C[c] + Occ(c, i -1) + 1.. C[c] + Occ(c,j) ]$ gdje je $C[c]$ ukupni broj pojavljivanja znakova u S koji su strogo leksikografski manji od $c$, a $Occ(c,i)$ je broj pojavljivanja znaka $c$ u BWT transformaciji u intervalu $[1..i]$.
+
+\subsection{Algoritam 2}
 
 \chapter{Eksperimenti i rezultati}
 

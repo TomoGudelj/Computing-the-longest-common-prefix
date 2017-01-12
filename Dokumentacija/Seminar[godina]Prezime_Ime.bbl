@@ -1,27 +1,35 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Beller et~al.(2011)Beller, Gog, Ohlebusch, i Schnattinger]{Beller2011}
+\bibitem[Beller et~al.(2013)Beller, Gog, Ohlebusch, i Schnattinger]{Beller2011}
 Timo Beller, Simon Gog, Enno Ohlebusch, i Thomas Schnattinger.
-\newblock \emph{Computing the Longest Common Prefix Array Based on the
-  Burrows-Wheeler Transform}, stranice 197--208.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2011.
-\newblock ISBN 978-3-642-24583-1.
-\newblock \doi{10.1007/978-3-642-24583-1_20}.
-\newblock URL \url{http://dx.doi.org/10.1007/978-3-642-24583-1_20}.
+\newblock \emph{Computing the longest common prefix array based on the
+  Burrows–Wheeler transform}, svezak~18, stranice 22 -- 31.
+\newblock 2013.
+\newblock \doi{http://dx.doi.org/10.1016/j.jda.2012.07.007}.
+\newblock URL
+  \url{http://www.sciencedirect.com/science/article/pii/S1570866712001104}.
+\newblock Selected papers from the 18th International Symposium on String
+  Processing and Information Retrieval (SPIRE 2011).
 
-\bibitem[Šikić i Domazet-Lošo(2013)]{domazet_sikic_skripta}
-Mile Šikić i Mirjana Domazet-Lošo.
-\newblock \emph{Bioinformatika}.
-\newblock 1nd izdanju, 2013.
+\bibitem[Ferragina(2000)]{feragina}
+Manzini~G. Ferragina, P.
+\newblock Opportunistic data structures with applications.
+\newblock \emph{IEEE Symposium on Foundations of Computer Science}, stranice
+  390 -- 398, 2000.
 
 \bibitem[Knudsen i Pedersen(2015)]{wt_book}
 Jan~H. Knudsen i Roland~L. Pedersen.
 \newblock \emph{Engineering Rank and Select Queries on Wavelet Trees}.
 \newblock 2015.
+
+\bibitem[Šikić i Domazet-Lošo(2013)]{domazet_sikic_skripta}
+Mile Šikić i Mirjana Domazet-Lošo.
+\newblock \emph{Bioinformatika}.
+\newblock 1nd izdanju, 2013.
 
 \end{thebibliography}
