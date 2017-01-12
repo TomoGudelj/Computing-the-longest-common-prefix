@@ -42,6 +42,9 @@
     <ClCompile Include="IWaveletTree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SDSLWaveletTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WaveletTree.h">
@@ -63,6 +66,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IWaveletTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SDSLWaveletTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
