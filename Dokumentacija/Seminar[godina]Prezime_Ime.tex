@@ -153,6 +153,8 @@ U ovom radu obrađuje se implementacija LCP polja temeljena na BWT transformacij
 \subsection{Algoritam 1}
 Feragina  i Manzini u članku\cite{feragina} pokazuju kako je moguće pretraživati uzorke u sufiksnom polju unazad znak po znak bez spremanja sufiksnog polja u memoriju. Neka je $\omega\hspace{0.5mm} \epsilon\hspace{0.5mm} \Sigma $ i $ \omega$ podniz od S. Za $\omega$-interval $[i..j]$ u sufiksnom polju SA niza S ($\omega$ je prefiks svih sufiksa u sufiksnom polju $S_{SA[k]}$ za sve $ i \leq k \leq j $), funkcija \textit{backwardSearch(c, [i..j])} vraća $ c\omega$-interval $[C[c] + Occ(c, i -1) + 1.. C[c] + Occ(c,j) ]$ gdje je $C[c]$ ukupni broj pojavljivanja znakova u S koji su strogo leksikografski manji od $c$, a $Occ(c,i)$ je broj pojavljivanja znaka $c$ u BWT transformaciji u intervalu $[1..i]$.
 
+Umjesto daljnjeg razmatranja implementacije u nastavku je dan pseudokod funkcije \textit{getIntervals([i..j])} koji za zadani $\omega$-interval $[i..j]$ gfdfdsaf
+
 \subsection{Algoritam 2}
 
 \chapter{Eksperimenti i rezultati}
