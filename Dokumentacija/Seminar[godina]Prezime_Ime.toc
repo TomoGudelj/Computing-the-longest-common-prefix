@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {2.2}Burrows-Wheelerova transformacija - BWT}{3}
 \contentsline {section}{\numberline {2.3}Binarno stablo vali\IeC {\'c}a}{3}
 \contentsline {section}{\numberline {2.4}Algoritmi}{6}
-\contentsline {subsection}{\numberline {2.4.1}Algoritam 1}{7}
+\contentsline {subsection}{\numberline {2.4.1}Algoritam 1}{6}
 \contentsline {subsection}{\numberline {2.4.2}Algoritam 2}{7}
 \contentsline {chapter}{\numberline {3}Eksperimenti i rezultati}{8}
 \contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{9}
