@@ -162,22 +162,40 @@ Umjesto daljnjeg razmatranja implementacije u nastavku je dan pseudokod funkcije
 	  \begin{table}[h]
 	  	
 	  	\centering
-	  	\begin{tabular}{|P{2cm}|P{3cm}|P{2.5cm}|} 
+	  	\begin{tabular}{|P{2cm}|P{3cm}|P{2.5cm}|P{3cm}|} 
 		 \hline
-		  Broj znakova & Implementacija Simona Goga [s] & Binarno stablo valića [s] \\
+		  Broj znakova & Implementacija Simona Goga [s] & Binarno stablo valića [s] & Gotova implementacija stabla [s] \\
 	  		 \hline
-	  		100 & 0.037231 & x \\
-	  		1,000 & 0.030089 & x \\
-	  		10,000 & 0.022991  & x \\ 
-	  		100,000 &  0.03929 & x \\
-	  		1,000,000 & 0.223351 & x \\	
+	  		100 & 0.037231 & 0.00074 & 0.00246\\
+	  		1,000 & 0.030089 & 0.03871 & 0.00499\\
+	  		10,000 & 0.022991  & 1.18603 & 0.04204\\ 
+	  		100,000 &  0.03929 & 107.89600 & 0.39687\\
+	  		1,000,000 & 0.223351 & - & 5.38922\\	
 	  		
 	  		\hline  		
 	  	\end{tabular}
-	  	\caption{Brzine izvođenja}
+	  	\caption{Brzina izvođenja}
 	  	\label{tbl:std_dev}
 	  \end{table}
 
+	\begin{table}[h]
+	
+	\centering
+	\begin{tabular}{|P{2cm}|P{3cm}|P{3cm}|P{3cm}|} 
+		\hline
+		Broj znakova & Implementacija Simona Goga [MB] & Binarno stablo valića [MB] & Gotova implementacija stabla [MB]\\
+		\hline
+		100 & 11.945 & 4.527 & 4.527\\
+		1,000 & 12.015. & 4.527 & 4.527\\
+		10,000 & 12.043 & 5.793 & 6.016\\ 
+		100,000 & 12.336 & 31.121 & 31.360\\
+		1,000,000 & 15.051 & - & 316.121\\	
+		
+		\hline  		
+		\end{tabular}
+		\caption{Zauzeće memorije}
+		\label{tbl:std_dev}
+	\end{table}
 asd
 
 
