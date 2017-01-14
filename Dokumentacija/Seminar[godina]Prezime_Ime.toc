@@ -8,6 +8,6 @@
 \contentsline {subsection}{\numberline {2.4.1}Algoritam 1}{7}
 \contentsline {subsection}{\numberline {2.4.2}Algoritam 2}{8}
 \contentsline {chapter}{\numberline {3}Eksperimenti i rezultati}{9}
-\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{10}
-\contentsline {chapter}{\numberline {5}Literatura}{11}
-\contentsline {chapter}{\numberline {6}Sa\IeC {\v z}etak}{12}
+\contentsline {chapter}{\numberline {4}Zaklju\IeC {\v c}ak}{12}
+\contentsline {chapter}{\numberline {5}Literatura}{13}
+\contentsline {chapter}{\numberline {6}Sa\IeC {\v z}etak}{14}

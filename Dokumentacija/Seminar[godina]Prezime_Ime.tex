@@ -139,8 +139,6 @@ Na primjer \textit{rank$_9$('n')}. Prvi ulazak rezultira novim indeksom 6 i prel
 
 Neke analize nizova zahtijevaju polje najdužih zajedničkih prefiksa (\textit{engl. longest common prefix array - $LCP$}). Polje sadržava duljine najdužih zajedničkih prefiksa između svih parova koji su uzastopno poredani u sufiksnom polju. Primjer izračunatog LCP polja prikazan je na slici \ref{lcp_table}.
 
-
-
 \begin{center}
 	\includegraphics[scale=0.5]{slike/lcp_table_2.png}
 	\captionof{figure}{ Sufiksno polje ($SA$), $BWT$ niz i $LCP$ polje. Slika preuzeta iz \cite{Beller2011}. }
@@ -186,52 +184,80 @@ Određeni interval uzima se iz strukture u redu $Q$. Za svaki dobiveni $c\omega$
 
 \chapter{Eksperimenti i rezultati}
 
-	  \begin{table}[h]
-	  	
-	  	\centering
-	  	\begin{tabular}{|P{2cm}|P{3cm}|P{2.5cm}|P{3cm}|P{3cm}|} 
-		 \hline
-		  Broj znakova & Implementacija Simona Goga [s] & Binarno stablo valića [s] & Gotova implementacija stabla [s] & Studentska implementacija (prošlogodišnja) [s] \\
-	  		 \hline
-	  		100 & 0.037231 & 0.00074 & 0.00246 & 0.00479\\
-	  		1,000 & 0.030089 & 0.03871 & 0.00499 & 0.07335 \\
-	  		10,000 & 0.022991  & 1.18603 & 0.04204 & 3.1015\\ 
-	  		100,000 &  0.03929 & 107.89600 & 0.39687 & - \\
-	  		1,000,000 & 0.223351 & - & 5.38922 & - \\	
-	  		
-	  		\hline  		
-	  	\end{tabular}
-	  	\caption{Brzina izvođenja}
-	  	\label{tbl:std_dev}
-	  \end{table}
+Pri analizi vremena uspoređuje se:
+\begin{center}
+	\begin{enumerate}
+		\setlength\itemsep{-0.8em}
+		\item {Originalna implementacija Simona Goga}
+		\item {Studentska implementacija algoritma}
+		\item {Studentska implementacija uz gotovu rank funkciju}
+		\item {Prošlogodišnja studentska implementacija algoritma}
+	\end{enumerate} 
+\end{center}
 
-	\begin{table}[h]
-	
-	\centering
+
+Kao što je vidljivo u tablici \ref{tbl:brzina}, brzine izvođenja ovise o veličini ulaza. Izvođenje programa najveći utrošak vremena ostvaruje na funkciji \textit{Rank}. Kod studentske implementacije funkcije \textit{Rank} dobiva se eksponencijalni rast vremena izvođenja, a kod gotove implementacije se također dobije eksponencijalni rast, ali uz manji nagib. Grafovi brzine izvođenja su na slici \ref{img:brzina}.
+
+\begin{table}[h]
+  	
+  	\centering
+  	\begin{tabular}{|P{2cm}|P{3cm}|P{2.5cm}|P{3cm}|P{3cm}|} 
+	 \hline
+	 Broj znakova & Implementacija Simona Goga [s] & Binarno stablo valića [s] & Gotova implementacija stabla [s] & Studentska implementacija (prošlogodišnja) [s] \\
+	 		 \hline
+  		100 & 0.037231 & 0.00074 & 0.00246 & 0.00479\\
+  		1,000 & 0.030089 & 0.03871 & 0.00499 & 0.07335 \\
+  		10,000 & 0.022991  & 1.18603 & 0.04204 & 3.1015\\ 
+  		100,000 &  0.03929 & 107.89600 & 0.39687 & - \\
+  		1,000,000 & 0.223351 & - & 5.38922 & - \\	
+  		
+  		\hline  		
+  	\end{tabular}
+  	\caption{Brzina izvođenja}
+  	\label{tbl:brzina}
+\end{table}
+
+\begin{center}
+	\includegraphics[scale=0.8]{slike/odlican_speed.png}
+	\captionof{figure}{Brzina izvođenja} 
+	\label{img:brzina}
+\end{center}
+
+Slijedeća važna komponenta pri ocjeni rada izvođenja je utrošak memorije. Zanimljivo je kako kod implementacije Simona Goga utrošak memorije za nizove do sto tisuća je skoro isti, odnosno kreće se oko 12 MB, a tek za niz od milijun znakova dobiva se nešto znatniji skok na 15 MB. Studentske implementacije, slično kao i za brzinu izvođenja, imaju ekspnencijalan rast utroška memorije. Za male nizove studentska implementacija koristi znatno manje memorije nego implementacija Simona Goga (oko 4 MB), ali za velike nizove dolazi do eksplozije potrošnje memorije. To je uzrokovano cache-iranjem rezultata funkcije \textit{Rank}. Funkcija \textit{Rank} se  može za neki podniz i određeno slovo iz abecede pozvati više puta, stoga se radi ubrzavanja rada algoritma izračunate vrijednosti spremaju hash-tablici. Pri svakom slijedećem pozivu funkcije \textit{Rank} prvo se pokuša naći rezultat u \textit{cache}-u, te ako zapis u \textit{cache}-u ne postoji, tek tada se obavlja izračun. Pokušaj dohvata i spremanja rezultata iz \textit{cache} memorije se obavlja u konstantnom vremenu (u veliko $O$ notaciji je $O(1)$), ali kao što je već rečeno, hash-tablica iziskuje relativno velike količne memorije. Podaci potrošnje memorije su vidljivi u tablici \ref{img:brzina} i grafu \ref{img:memorija}. 
+
+
+\begin{table}[h]
+
+\centering
 	\begin{tabular}{|P{2cm}|P{3cm}|P{3cm}|P{3cm}|P{3cm}|} 
-		\hline
-		Broj znakova & Implementacija Simona Goga [MB] & Binarno stablo valića [MB] & Gotova implementacija stabla [MB] & Studentska implementacija (prošlogodišnja) [MB]\\
-		\hline
+	\hline
+	Broj znakova & Implementacija Simona Goga [MB] & Binarno stablo valića [MB] & Gotova implementacija stabla [MB] & Studentska implementacija (prošlogodišnja) [MB]\\
+	\hline
 		100 & 11.945 & 4.527 & 4.527 & 6.1856 \\
 		1,000 & 12.015. & 4.527 & 4.527 & 6.2156 \\
 		10,000 & 12.043 & 5.793 & 6.016 & 7.1581 \\ 
 		100,000 & 12.336 & 31.121 & 31.360& - \\
 		1,000,000 & 15.051 & - & 316.121& - \\	
-		
-		\hline  		
-		\end{tabular}
-		\caption{Zauzeće memorije}
-		\label{tbl:std_dev}
-	\end{table}
+	
+	\hline  		
+	\end{tabular}
+	\caption{Utrošak memorije}
+	\label{tbl:memorija}
+\end{table}
 
+\begin{center}
+	\includegraphics[scale=0.8]{slike/odlican_memorija.png}
+	\captionof{figure}{Utrošak memorije} 
+	\label{img:memorija}
+\end{center}
 
 \chapter{Zaključak}
-Zaključak.
+Rezultat ovog rada je uspješno implementirani algoritam traženja najduljeg zajedničkog prefiksa uz korištenje Burrows-Wheelerove transformacije. Prilikom implementacije najveći problem bio je zadovoljiti postavljena resursna ograničenja, brzinu izvođenja i utrošak memorije, čak i ako se na ulazu postave za nizovi s velikim brojem znakova. Najkritičniji dio aplikacije je funkcija \textit{Rank}, tj. preciznije funkcija \textit{BinaryRank} koja se poziva u funkciji \textit{Rank}. Navedena funkcija se može efikasnije napraviti kako bi se dobilo na ubrzanju izvođnja algoritma. Iako aplikacija za velike nizove radi puno lošije nego originalna implementacija Simona Goga, primjetno je kako studentska implementacija za male nizove (do 1000 znakova) troši znatno manje memorije i vremenski je brža. Sve u svemu, ostvaren je cilj projekta, dobivena aplikacija ima prihvatljive brzine izvođenja i utrošak memorije. 
 
 \bibliography{literatura}
 \bibliographystyle{fer}
 
 \chapter{Sažetak}
-Sažetak.
+Analize nizova su računalno zahtjevni problemi koji za velike instance nizova mogu iziskivati velike količine resursa. Efikasne analize se postižu korištenjem sufiksnih polja, a često je potrebno i polje najduljih zajedničkih prefiksa. U ovom radu objašnjeno je računanje najduljeg zajedničkog prefiksa korištenjem Burrows-Wheelerove transformacije sufiksnog polja u indekse podnizova unutar cijelog teksta. Za spremanje Burrows-Wheelerove transformacije korišteno je stablo valića.
 
 \end{document}
