@@ -27,7 +27,7 @@ This library contains implementation of rank function used for testing original 
 3) Compile this project with following instruction:
 
    ```sh
-  cd ./Computing-The-Longest-Common-Prefix/ComputingTheLongestCommonPrefixArray/ComputingTheLongestCommonPrefixArray/
+  cd ./Computing-the-longest-common-prefix/ComputingTheLongestCommonPrefixArray/ComputingTheLongestCommonPrefixArray/
   g++ -std=c++11 -O3 -DNDEBUG *.cpp -o application -lsdsl -I ~/include -L ~/lib
   ```
 4) To run the program, "alphabet.txt" file must be in the same directory as executable and it must contain alphabet used in input (including '$' character). 
