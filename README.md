@@ -30,8 +30,8 @@ This library contains implementation of rank function used for testing original 
   cd ./Computing-The-Longest-Common-Prefix/ComputingTheLongestCommonPrefixArray/ComputingTheLongestCommonPrefixArray/
   g++ -std=c++11 -O3 -DNDEBUG *.cpp -o application -lsdsl -I ~/include -L ~/lib
   ```
-4) To run the program "alphabet.txt" must be in the same directory as executable and it must contain alphabet used in input (including '$' character). 
-Program reads from standard input, however, user can redirect desired file to input stream.
+4) To run the program, "alphabet.txt" file must be in the same directory as executable and it must contain alphabet used in input (including '$' character). 
+Program reads from standard input, however, user can redirect desired file to input stream. Input must contain '$' character at the end.
 
 To execute program, user can choose 2 options:
 
