@@ -5,7 +5,7 @@
 #include <ctime>
 #include <ratio>
 
-//#define USE_MEMORY_METER
+#define USE_MEMORY_ANALYZER
 #ifdef USE_MEMORY_ANALYZER
 #include <sys/resource.h>
 #endif
