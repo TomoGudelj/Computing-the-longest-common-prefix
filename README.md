@@ -34,6 +34,7 @@ This library contains implementation of rank function used for testing original 
 Program reads from standard input, however, user can redirect file to input stream.
 
 To execute program user can choose 2 options:
+
 a) Run the student implementation of rank function:
 
    ```sh
