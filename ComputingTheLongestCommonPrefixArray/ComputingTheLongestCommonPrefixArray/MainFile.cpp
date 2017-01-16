@@ -60,21 +60,27 @@ int main(int argc, char *argv[]) {
 	file >> alphabet;
 	sort(alphabet.begin(), alphabet.end());
 
-        IWaveletTree *tree;//(bwt.BWT_string, alphabet);
-        if(string("studentWT") == argv[1]) //student implementation
-        {
-            tree = new WaveletTree(bwt.BWT_string, alphabet);
-            cout << "student" << endl;
-        }
-        else //SDSL alhorithm
-        {
-            tree = new SDSLWaveletTree(bwt.BWT_string, alphabet);
-            cout << "sdsl" << endl;
-        }
+    IWaveletTree *tree;//(bwt.BWT_string, alphabet);
+    if(string("studentWT") == argv[1]) //student implementation
+    {
+        tree = new WaveletTree(bwt.BWT_string, alphabet);
+        cout << "student" << endl;
+    }
+    else if(string("sdslWT") == argv[1])//SDSL alhorithm
+    {
+        tree = new SDSLWaveletTree(bwt.BWT_string, alphabet);
+        cout << "sdsl" << endl;
+    }
+	else
+	{
+		cout << "Bad parameter" << endl;
+		return 0;
+	}
 
-        chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
 
-        tree->BuildTree();
+    tree->BuildTree();
+
 
 	////////////////////////////// End Wavelet tree ///////////////////////////
 
