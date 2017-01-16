@@ -1,4 +1,4 @@
-# Computing-the-longest-common-prefix
+# Computing the longest common prefix
 
 Implementation of algorithm for computing the longest common prefix based on the Burrows-Wheeler transform.
 This project is part of university subject bioinformatics.
@@ -27,13 +27,13 @@ This library contains implementation of rank function used for testing original 
 3) Compile this project with following instruction:
 
    ```sh
-  cd ./ComputingTheLongestCommonPrefixArray/
+  cd ./Computing-The-Longest-Common-Prefix/ComputingTheLongestCommonPrefixArray/ComputingTheLongestCommonPrefixArray/
   g++ -std=c++11 -O3 -DNDEBUG *.cpp -o application -lsdsl -I ~/include -L ~/lib
   ```
-4) To run the program "alphabet.txt" must be in the same directory as executable and it must contain alphabet used in input. 
-Program reads from standard input, however, user can redirect file to input stream.
+4) To run the program "alphabet.txt" must be in the same directory as executable and it must contain alphabet used in input (including '$' character). 
+Program reads from standard input, however, user can redirect desired file to input stream.
 
-To execute program user can choose 2 options:
+To execute program, user can choose 2 options:
 
 a) Run the student implementation of rank function:
 
