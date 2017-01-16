@@ -74,7 +74,8 @@ Sufiksno polje je polje indeksa leksikografski poredanih sufiksa nekog niza $S$.
 	\end{enumerate} 
 \end{center}
 Sufiksno polje $SA$ je polje indeksa ulaznog niza kojim započinju gore navedeni sufiksi. Slijedno tome vrijedi 
-$SA = [18, 2, 8, 3, 12, 7, 0, 5, 14, 16, 10, 1, 6, 15, 9, 17, 4, 13, 11]$.\cite{Beller2011}
+$SA = [18, 2, 8, 3, 12, 7, 0, 5, 14, 16, 10, 1, 6, 15, 9, 17, 4, 13, 11]$.\cite{Beller2011} \\
+U implementaciji za izradu sufiksnog polja korištena je \textit{libdivsufsort} biblioteka Yuta-e Mori-a.
 
 \section {Burrows-Wheelerova transformacija - BWT}
 Burrows-Wheelerova transformacija je transformacija ulaznog teksta koja rezultira sažimanjem istoga. Može se odrediti na dva načina definirana u \cite{domazet_sikic_skripta}: 
@@ -171,7 +172,7 @@ Na svakom čvoru $v$ izračunava se rank za dohvat broja nula $(b_{0}-a_{0})$ u 
 Algoritam služi za izračunavanje LCP polja i temelji se na algoritmu 1. U nastavku je prikazan pseudokod.
 
 \begin{center}
-	\includegraphics[scale=0.5]{slike/algorithm_2.png}
+	\includegraphics[scale=0.46]{slike/algorithm_2.png}
 	\captionof{figure}{ Algoritam 2. Preuzeto iz \cite{Beller2011}. }
 	\label{alg2}
 \end{center}
@@ -190,8 +191,8 @@ Pri analizi vremena uspoređuje se:
 		\setlength\itemsep{-0.8em}
 		\item {Originalna implementacija Simona Goga}
 		\item {Studentska implementacija algoritma}
-		\item {Studentska implementacija uz gotovu rank funkciju}
-		\item {Prošlogodišnja studentska implementacija algoritma}
+		\item {Studentska implementacija uz gotovu rank funkciju (iz SDSL biblioteke Simon Gog-a)}
+		\item {Prošlogodišnja studentska implementacija algoritma (2-arno stablo - 2 je broj grana koji izlazi iz nekog čvora; 2 za binarno stablo)}
 	\end{enumerate} 
 \end{center}
 
@@ -201,7 +202,7 @@ Kao što je vidljivo u tablici \ref{tbl:brzina}, brzine izvođenja ovise o veli�
 \begin{table}[h]
   	
   	\centering
-  	\begin{tabular}{|P{2cm}|P{3cm}|P{2.5cm}|P{3cm}|P{3cm}|} 
+  	\begin{tabular}{|P{2cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|P{3cm}|} 
 	 \hline
 	 Broj znakova & Implementacija Simona Goga [s] & Binarno stablo valića [s] & Gotova implementacija stabla [s] & Studentska implementacija (prošlogodišnja) [s] \\
 	 		 \hline
@@ -218,7 +219,7 @@ Kao što je vidljivo u tablici \ref{tbl:brzina}, brzine izvođenja ovise o veli�
 \end{table}
 
 \begin{center}
-	\includegraphics[scale=0.8]{slike/odlican_speed.png}
+	\includegraphics[scale=0.75]{slike/odlican_speed.png}
 	\captionof{figure}{Brzina izvođenja} 
 	\label{img:brzina}
 \end{center}
@@ -229,7 +230,7 @@ Slijedeća važna komponenta pri ocjeni rada izvođenja je utrošak memorije. Za
 \begin{table}[h]
 
 \centering
-	\begin{tabular}{|P{2cm}|P{3cm}|P{3cm}|P{3cm}|P{3cm}|} 
+	\begin{tabular}{|P{2cm}|P{2.5cm}|P{2.5cm}|P{2.5cm}|P{3cm}|} 
 	\hline
 	Broj znakova & Implementacija Simona Goga [MB] & Binarno stablo valića [MB] & Gotova implementacija stabla [MB] & Studentska implementacija (prošlogodišnja) [MB]\\
 	\hline
@@ -252,7 +253,7 @@ Slijedeća važna komponenta pri ocjeni rada izvođenja je utrošak memorije. Za
 \end{center}
 
 \chapter{Zaključak}
-Rezultat ovog rada je uspješno implementirani algoritam traženja najduljeg zajedničkog prefiksa uz korištenje Burrows-Wheelerove transformacije. Prilikom implementacije najveći problem bio je zadovoljiti postavljena resursna ograničenja, brzinu izvođenja i utrošak memorije, čak i ako se na ulazu postave za nizovi s velikim brojem znakova. Najkritičniji dio aplikacije je funkcija \textit{Rank}, tj. preciznije funkcija \textit{BinaryRank} koja se poziva u funkciji \textit{Rank}. Navedena funkcija se može efikasnije napraviti kako bi se dobilo na ubrzanju izvođnja algoritma. Iako aplikacija za velike nizove radi puno lošije nego originalna implementacija Simona Goga, primjetno je kako studentska implementacija za male nizove (do 1000 znakova) troši znatno manje memorije i vremenski je brža. Sve u svemu, ostvaren je cilj projekta, dobivena aplikacija ima prihvatljive brzine izvođenja i utrošak memorije. 
+Rezultat ovog rada je uspješno implementirani algoritam traženja najduljeg zajedničkog prefiksa uz korištenje Burrows-Wheelerove transformacije. Prilikom implementacije najveći problem bio je zadovoljiti postavljena resursna ograničenja, brzinu izvođenja i utrošak memorije, čak i ako se na ulazu postave nizovi s velikim brojem znakova. Najkritičniji dio aplikacije je funkcija \textit{Rank}, tj. preciznije funkcija \textit{BinaryRank} koja se poziva u funkciji \textit{Rank}. Navedena funkcija se može efikasnije napraviti kako bi se dobilo na ubrzanju izvođnja algoritma. Iako aplikacija za velike nizove radi puno lošije nego originalna implementacija Simona Goga, primjetno je kako studentska implementacija za male nizove (do 1000 znakova) troši znatno manje memorije i vremenski je brža. Sve u svemu, ostvaren je cilj projekta, dobivena aplikacija ima prihvatljive brzine izvođenja i utrošak memorije. 
 
 \bibliography{literatura}
 \bibliographystyle{fer}
